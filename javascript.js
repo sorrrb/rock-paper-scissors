@@ -13,15 +13,17 @@ let game = () => {
 					++playerWins;
 					scoreDiv.textContent = playerWins + '-' + computerWins;
 					resultDiv.textContent = 'You win! ' + playerSelection + ' beats ' + computerSelection;
+					checkWin();
 					return;
 			}
 			++computerWins;
 			scoreDiv.textContent = playerWins + '-' + computerWins;
 			resultDiv.textContent = 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+			checkWin();
 			return;
 		}
 		else {
-			resultDiv.textContent = 'It\'s a tie!';
+			resultDiv.textContent = 'It\'s a tie! Both players chose ' + playerSelection;
 			return;
 		}
 	};
@@ -48,6 +50,15 @@ let game = () => {
 	container.appendChild(scoreDiv);
 	container.appendChild(resultDiv);
 	scoreDiv.textContent = playerWins + '-' + computerWins;
+
+	let checkWin = () => {
+		if (playerWins === 5) {
+			resultDiv.textContent = 'YOU WIN!';
+		}
+		else if (computerWins === 5) {
+			resultDiv.textContent = 'YOU LOSE!';
+		}
+	}
 }
 
 game();
