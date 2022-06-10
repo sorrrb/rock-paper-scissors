@@ -1,46 +1,53 @@
-const CHOICES = ['Rock', 'Paper', 'Scissors'];
-let playerWins = 0;
-let computerWins = 0;
+let game = () => {
+	const CHOICES = ['Rock', 'Paper', 'Scissors'];
+	let playerWins = 0;
+	let computerWins = 0;
 
-function computerPlay() {
-	return CHOICES[Math.floor(Math.random() * 3)];
-}
+	let computerPlay = () => CHOICES[Math.round((Math.random() * 2))];
 
-function playRound(playerSelection, computerSelection) {
-	if (playerSelection !== computerSelection) {
-		if (((playerSelection === CHOICES[0]) && (computerSelection === CHOICES[2])) ||
-			((playerSelection === CHOICES[1]) && (computerSelection === CHOICES[0])) ||
-			((playerSelection === CHOICES[2]) && (computerSelection === CHOICES[1]))) {
-				return "win";
+	let playRound = (playerSelection, computerSelection) => {
+		if (playerSelection !== computerSelection) {
+			if (((playerSelection === CHOICES[0]) && (computerSelection === CHOICES[2])) ||
+				((playerSelection === CHOICES[1]) && (computerSelection === CHOICES[0])) ||
+				((playerSelection === CHOICES[2]) && (computerSelection === CHOICES[1]))) {
+					++playerWins;
+					scoreDiv.textContent = playerWins + '-' + computerWins;
+					resultDiv.textContent = 'You win! ' + playerSelection + ' beats ' + computerSelection;
+					return;
+			}
+			++computerWins;
+			scoreDiv.textContent = playerWins + '-' + computerWins;
+			resultDiv.textContent = 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+			return;
 		}
 		else {
-			return "loss";
+			resultDiv.textContent = 'It\'s a tie!';
+			return;
 		}
-	}
-	else {
-		return "tie";
-	}
-}
+	};
 
-const roundPlay = (playerSelection, computerSelection) => {
-	let playChoice = playerSelection;
-	let compChoice = computerSelection;
-	if (playChoice !== compChoice) {
-		if (((playChoice === CHOICES[0]) && (compChoice === CHOICE[1])) ||
-			((playerSelection === CHOICES[1]) && (computerSelection === CHOICES[0])) ||
-			((playerSelection === CHOICES[2]) && (computerSelection === CHOICES[1]))) {
-				return "win";
-		}
-		else return "loss";
-	}
-	else return "tie";
-}
+	const container = document.querySelector('#ui');
+	const scoreDiv = document.createElement('div');
+	const resultDiv = document.createElement('div');
 
-const divUI = document.querySelector('#ui');
-const rockBtn = document.querySelector('.ui-rock');
-const paperBtn = document.querySelector('.ui-paper');
-const scissorsBtn = document.querySelector('.ui-scissors');
+	const rockChoice = document.querySelector('.ui-rock');
+	rockChoice.textContent = 'Rock';
+	let rockSelect = () => playRound(CHOICES[0], computerPlay());
+	rockChoice.addEventListener('click', rockSelect);
 
-rockBtn.addEventListener('click', () => {
+	const paperChoice = document.querySelector('.ui-paper');
+	paperChoice.textContent = 'Paper';
+	let paperSelect = () => playRound(CHOICES[1], computerPlay());
+	paperChoice.addEventListener('click', paperSelect);
+
+	const scissorsChoice = document.querySelector('.ui-scissors');
+	scissorsChoice.textContent = 'Scissors';
+	let scissorsSelect = () => playRound(CHOICES[2], computerPlay());
+	scissorsChoice.addEventListener('click', scissorsSelect);
 	
-});
+	container.appendChild(scoreDiv);
+	container.appendChild(resultDiv);
+	scoreDiv.textContent = playerWins + '-' + computerWins;
+}
+
+game();
