@@ -1,85 +1,92 @@
 let game = () => {
-  let computerWins = 0;
-  let playerWins = 0;
+  const MOVES = ['Rock', 'Paper', 'Scissors'];
+  let playWins = 0;
+  let compWins = 0;
 
-  const scoreInterface = document.querySelector('.score');
-  const resultInterface = document.querySelector('.result');
-  const endMessage = document.querySelector('.end');
-  
-  const moveOptions = ['Rock', 'Paper', 'Scissors'];
-
-  if (playerWins == 5) {
-    endMessage.textContent = 'You win!';
-  }
-  else if (computerWins == 5) {
-    endMessage.textContent = 'You lose!';
+  function computerPlay() {
+    return MOVES[Math.round(Math.random() * 2)];
   }
 
-  let computerPlay = () => {
-    return moveOptions[Math.round(Math.random() * 2)];
-  }
-
-  let checkWinner = (x, y) => {
-    if (((x === moveOptions[0]) && (y === moveOptions[2])) ||
-        ((x === moveOptions[1]) && (y === moveOptions[0])) ||
-        ((x === moveOptions[2]) && (y === moveOptions[1]))) {
-          ++playerWins;
-          resultInterface.textContent = 'You win! ' + x + ' beats ' + y;
-          return;
-        }
+  function checkWinner(firstMove, secondMove) {
+    if (firstMove !== secondMove) {
+      if (((firstMove === MOVES[0]) && (secondMove === MOVES[2])) ||
+          ((firstMove === MOVES[1]) && (secondMove === MOVES[0])) ||
+          ((firstMove === MOVES[2]) && (secondMove === MOVES[1]))) {
+        ++playWins;
+        setScore();
+        setResult(1, firstMove, secondMove);
+        checkEnd(playWins, compWins);
+        return;
+      }
+      else {
+        ++compWins;
+        setScore();
+        setResult(0, firstMove, secondMove);
+        checkEnd(playWins, compWins);
+        return;
+      }
+    }
     else {
-      ++computerWins;
-      resultInterface.textContent = 'You lose. ' + y + ' beats ' + x;
+      setScore();
+      setResult(2, firstMove, secondMove);
       return;
     }
   }
 
-  let playRound = (playerSelection, computerSelection) => {
-    if (playerSelection !== computerSelection) {
-      checkWinner(playerSelection, computerSelection);
-      scoreInterface.textContent = playerWins + ' - ' + computerWins;
+  function playRound(playerSelect, computerSelect) {
+    checkWinner(playerSelect, computerSelect);
+  }
+
+  function setScore() {
+    gameScore.textContent = 'The score is: ' + playWins + ' - ' + compWins;
+  }
+
+  function setResult(condition, x, y) {
+    if (condition === 1) {
+      resultMessage.textContent = 'You won! ' + x + ' beats ' + y + '!';
     }
-    else {
-      resultInterface.textContent = 'It\'s a tie! You both chose ' + playerSelection;
+    else if (condition === 0) {
+      resultMessage.textContent = 'You lost! ' + y + ' beats ' + x + '!';
+    }
+    else resultMessage.textContent = 'It\'s a tie! Both players chose ' + x;
+  }
+
+  function checkEnd(playerWins, computerWins) {
+    if ((playerWins !== 5) && (computerWins !== 5)) {
       return;
     }
+    else {
+      if (playerWins === 5) {
+        endMessage.textContent = 'You win!';
+        MOVE_CHOICES.forEach((choice) => {
+          choice.removeEventListener('click', makeChoice, false);
+        });
+        gameScore.textContent = 'Final score: ' + playWins + ' - ' + compWins;
+        resultMessage.textContent = '';
+      }
+      if (computerWins === 5) {
+        endMessage.textContent = 'You lose!';
+        MOVE_CHOICES.forEach((choice) => {
+          choice.removeEventListener('click', makeChoice, false);
+        });
+        gameScore.textContent = 'Final score: ' + playWins + ' - ' + compWins;
+        resultMessage.textContent = '';
+      }
+    }
   }
 
-  const makeMove = (e) => { // named callback function to derive result from choices
-    const playerChoice = e.target.textContent;
-    const compChoice = computerPlay();
-    playRound(playerChoice, compChoice);
+  function makeChoice(e) {
+    playRound(this.textContent, computerPlay());
   }
 
-  const gameInterface = document.querySelector('#interface');
-  const choices = document.querySelectorAll('button.choice');
-  choices.forEach((choice) => { // iterate through each 'choice' button
-    choice.addEventListener('click', makeMove); /* for each 'choice' button
-    call playRound with the appropriate selections using function makeMove */
+  const MOVE_CHOICES = document.querySelectorAll('button.choice');
+  MOVE_CHOICES.forEach((choice) => {
+    choice.addEventListener('click', makeChoice);
   });
+
+  const gameScore = document.querySelector('.score');
+  const resultMessage = document.querySelector('.result');
+  const endMessage = document.querySelector('.end');
 }
 
-
 game();
-
-/*
-
-loose
-!=
-==
-
-strict
-!==
-===
-
-let a = 5;
-let b = 5;
-let c = '5';
-let d = "hello";
-let hello = "hi!";
-
-console.log("hello");
-console.log(hello);
-
-
-*/
