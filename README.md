@@ -1,8 +1,10 @@
 # rock-paper-scissors
-A webpage containing basic functionality for a 'first-to-five' game of Rock, Paper, Scissors.
+A webpage containing basic functionality for a 'first-to-five' game of Rock, Paper, Scissors
+
+Demo located [here](https://sorrrb.github.io/rock-paper-scissors/)
 
 ### Attribution:
-All code and knowledge gained through creating this page is owed to The Odin Project. Specific project link [here](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors).
+All code and knowledge gained through creating this page is owed to The Odin Project. Specific project link [here](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors)
 
 ## Languages used:
 - HTML
