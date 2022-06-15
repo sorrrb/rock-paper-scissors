@@ -1,10 +1,8 @@
 # rock-paper-scissors
-
 A webpage containing basic functionality for a 'first-to-five' game of Rock, Paper, Scissors.
 
 ### Attribution:
-
-All code and knowledge gained through creating this page is owed to The Odin Project. Specific project link here.
+All code and knowledge gained through creating this page is owed to The Odin Project. Specific project link [here](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors).
 
 ## Languages used:
 - HTML
@@ -17,17 +15,20 @@ All code and knowledge gained through creating this page is owed to The Odin Pro
     - Strings
     - Arrays
     - Booleans
+
 - Operations, operators, operands
     - Increment/decrement
         - Prefix/postfix
     - Basic math operators
     - Concatenation
     - Typecasting
+
 - Functions
     - Function calls
     - Function declarations
     - Callbacks
     - Helper functions
+
 - DOM
     - Nodes & Nodelists
     - Node target selectors
@@ -35,7 +36,6 @@ All code and knowledge gained through creating this page is owed to The Odin Pro
     - Basic event handling
     - Introduction to keyword this
     - Introduction to event bubbling and capturing
-
 
 ## To-do:
 - Add images in place of text buttons
