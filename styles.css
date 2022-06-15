@@ -23,22 +23,32 @@ body {
 
 #interface {
     border: 3px solid hsl(6, 93%, 61%);
-    border-radius: 144px;
     background-color: hsl(6, 93%, 71%);
-    padding: 144px;
-    margin-top: 5%;
+    margin-top: 32px;
+    padding: 32px 64px;
 
     display: flex;
     flex-direction: column;
 }
 
 #interface > div {
-    padding: 32px 0;
     text-align: center;
 
     font-size: 18px;
     font-weight: 600;
     color: white;
+}
+
+.count, .score, .result, .end {
+    padding-top: 32px;
+}
+
+.score {
+    font-size: 36px;
+}
+
+.end {
+    padding-bottom: 64px;
 }
 
 .container {

@@ -1,6 +1,8 @@
 # rock-paper-scissors
 
-A script containing basic functionality for a 'first-to-five' game of Rock, Paper, Scissors.
+A webpage containing basic functionality for a 'first-to-five' game of Rock, Paper, Scissors.
+
+### Attribution:
 
 All code and knowledge gained through creating this page is owed to The Odin Project. Specific project link here.
 
@@ -20,3 +22,8 @@ All code and knowledge gained through creating this page is owed to The Odin Pro
     - Node target selectors
     - DOM methods
     - Basic event handling
+
+## To-do:
+- Add images in place of text buttons
+- Refactor HTML/CSS to clean up design/element layout
+- Add 'Play Again' button which refreshes the page

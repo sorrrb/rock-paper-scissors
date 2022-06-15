@@ -38,17 +38,17 @@ let game = () => {
   }
 
   function setScore() {
-    gameScore.textContent = 'The score is: ' + playWins + ' - ' + compWins;
+    gameScore.textContent = playWins + ' - ' + compWins;
   }
 
   function setResult(condition, x, y) {
     if (condition === 1) {
-      resultMessage.textContent = 'You won! ' + x + ' beats ' + y + '!';
+      resultMessage.textContent = 'You won! ' + x + ' beats ' + y + '.';
     }
     else if (condition === 0) {
-      resultMessage.textContent = 'You lost! ' + y + ' beats ' + x + '!';
+      resultMessage.textContent = 'You lost! ' + y + ' beats ' + x + '.';
     }
-    else resultMessage.textContent = 'It\'s a tie! Both players chose ' + x;
+    else resultMessage.textContent = 'It\'s a tie! Both players chose ' + x + '.';
   }
 
   function checkEnd(playerWins, computerWins) {
@@ -62,6 +62,7 @@ let game = () => {
           choice.removeEventListener('click', makeChoice, false);
         });
         gameScore.textContent = 'Final score: ' + playWins + ' - ' + compWins;
+        scoreHead.textContent = '';
         resultMessage.textContent = '';
       }
       if (computerWins === 5) {
@@ -70,6 +71,7 @@ let game = () => {
           choice.removeEventListener('click', makeChoice, false);
         });
         gameScore.textContent = 'Final score: ' + playWins + ' - ' + compWins;
+        scoreHead.textContent = '';
         resultMessage.textContent = '';
       }
     }
@@ -84,6 +86,7 @@ let game = () => {
     choice.addEventListener('click', makeChoice);
   });
 
+  const scoreHead = document.querySelector('.count')
   const gameScore = document.querySelector('.score');
   const resultMessage = document.querySelector('.result');
   const endMessage = document.querySelector('.end');
