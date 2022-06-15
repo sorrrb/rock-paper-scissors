@@ -1,64 +1,85 @@
 let game = () => {
-	const CHOICES = ['Rock', 'Paper', 'Scissors'];
-	let playerWins = 0;
-	let computerWins = 0;
+  let computerWins = 0;
+  let playerWins = 0;
 
-	let computerPlay = () => CHOICES[Math.round((Math.random() * 2))];
+  const scoreInterface = document.querySelector('.score');
+  const resultInterface = document.querySelector('.result');
+  const endMessage = document.querySelector('.end');
+  
+  const moveOptions = ['Rock', 'Paper', 'Scissors'];
 
-	let playRound = (playerSelection, computerSelection) => {
-		if (playerSelection !== computerSelection) {
-			if (((playerSelection === CHOICES[0]) && (computerSelection === CHOICES[2])) ||
-				((playerSelection === CHOICES[1]) && (computerSelection === CHOICES[0])) ||
-				((playerSelection === CHOICES[2]) && (computerSelection === CHOICES[1]))) {
-					++playerWins;
-					scoreDiv.textContent = playerWins + '-' + computerWins;
-					resultDiv.textContent = 'You win! ' + playerSelection + ' beats ' + computerSelection;
-					checkWin();
-					return;
-			}
-			++computerWins;
-			scoreDiv.textContent = playerWins + '-' + computerWins;
-			resultDiv.textContent = 'You lose! ' + computerSelection + ' beats ' + playerSelection;
-			checkWin();
-			return;
-		}
-		else {
-			resultDiv.textContent = 'It\'s a tie! Both players chose ' + playerSelection;
-			return;
-		}
-	};
+  if (playerWins == 5) {
+    endMessage.textContent = 'You win!';
+  }
+  else if (computerWins == 5) {
+    endMessage.textContent = 'You lose!';
+  }
 
-	const container = document.querySelector('#ui');
-	const scoreDiv = document.createElement('div');
-	const resultDiv = document.createElement('div');
+  let computerPlay = () => {
+    return moveOptions[Math.round(Math.random() * 2)];
+  }
 
-	const rockChoice = document.querySelector('.ui-rock');
-	rockChoice.textContent = 'Rock';
-	let rockSelect = () => playRound(CHOICES[0], computerPlay());
-	rockChoice.addEventListener('click', rockSelect);
+  let checkWinner = (x, y) => {
+    if (((x === moveOptions[0]) && (y === moveOptions[2])) ||
+        ((x === moveOptions[1]) && (y === moveOptions[0])) ||
+        ((x === moveOptions[2]) && (y === moveOptions[1]))) {
+          ++playerWins;
+          resultInterface.textContent = 'You win! ' + x + ' beats ' + y;
+          return;
+        }
+    else {
+      ++computerWins;
+      resultInterface.textContent = 'You lose. ' + y + ' beats ' + x;
+      return;
+    }
+  }
 
-	const paperChoice = document.querySelector('.ui-paper');
-	paperChoice.textContent = 'Paper';
-	let paperSelect = () => playRound(CHOICES[1], computerPlay());
-	paperChoice.addEventListener('click', paperSelect);
+  let playRound = (playerSelection, computerSelection) => {
+    if (playerSelection !== computerSelection) {
+      checkWinner(playerSelection, computerSelection);
+      scoreInterface.textContent = playerWins + ' - ' + computerWins;
+    }
+    else {
+      resultInterface.textContent = 'It\'s a tie! You both chose ' + playerSelection;
+      return;
+    }
+  }
 
-	const scissorsChoice = document.querySelector('.ui-scissors');
-	scissorsChoice.textContent = 'Scissors';
-	let scissorsSelect = () => playRound(CHOICES[2], computerPlay());
-	scissorsChoice.addEventListener('click', scissorsSelect);
-	
-	container.appendChild(scoreDiv);
-	container.appendChild(resultDiv);
-	scoreDiv.textContent = playerWins + '-' + computerWins;
+  const makeMove = (e) => { // named callback function to derive result from choices
+    const playerChoice = e.target.textContent;
+    const compChoice = computerPlay();
+    playRound(playerChoice, compChoice);
+  }
 
-	let checkWin = () => {
-		if (playerWins === 5) {
-			resultDiv.textContent = 'YOU WIN!';
-		}
-		else if (computerWins === 5) {
-			resultDiv.textContent = 'YOU LOSE!';
-		}
-	}
+  const gameInterface = document.querySelector('#interface');
+  const choices = document.querySelectorAll('button.choice');
+  choices.forEach((choice) => { // iterate through each 'choice' button
+    choice.addEventListener('click', makeMove); /* for each 'choice' button
+    call playRound with the appropriate selections using function makeMove */
+  });
 }
 
+
 game();
+
+/*
+
+loose
+!=
+==
+
+strict
+!==
+===
+
+let a = 5;
+let b = 5;
+let c = '5';
+let d = "hello";
+let hello = "hi!";
+
+console.log("hello");
+console.log(hello);
+
+
+*/
