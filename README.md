@@ -10,6 +10,9 @@ Demo link: [here]()
 - JavaScript (vanilla)
 
 ### Defined skills:
+- Flexbox position/layout
+- SVG filetype usage
+
 - Functions (function declarations, function calls, function scope, callback functions)
 - Data types
 - Operations (assignments, operators, operands)
