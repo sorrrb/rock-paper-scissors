@@ -2,9 +2,77 @@ body {
   margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
+
+/*--------------------*\
+  PAGE SECTIONS
+\*--------------------*/
+
+.page--header {
+  width: 100%;
+  background-color: #291F1E;
+}
+
+
+
+/*--------------------*\
+  HEADER
+\*--------------------*/
+
+.game--title {
+  margin: 0;
+  padding: 16px;
+  font-size: 32px;
+  color: #F3F7F0;
+}
+
+
+
+/*--------------------*\
+  CONTENT
+\*--------------------*/
+
+.page--content {
+  flex: 1;
+  background-color: #477998;
+}
+
+
+
+/*--------------------*\
+  HEADER
+\*--------------------*/
+
+.page--footer {
+  flex: 0;
+  background-color: #291F1E;
+}
+
+.footer--text {
+  margin: 0;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 24px;
+  color: #F3F7F0;
+}
+
+
 
 /*--------------------*\
 	SELECTOR GROUP TITLE
 \*--------------------*/
 
+/*
+
+#C4D6B0 - tea green
+#477998 - cg blue
+#291F1E - raisin black
+#EEE5E9 - lavender blush
+#F3F7F0 - mint cream
+
+*/
