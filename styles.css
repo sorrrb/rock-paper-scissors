@@ -53,6 +53,10 @@ body {
   background-color: #C4D6B0;
 }
 
+.media:hover {
+  cursor: pointer;
+}
+
 .move--wrapper {
   display: flex;
   justify-content: center;
