@@ -49,7 +49,7 @@ body {
   width: 10%;
   margin: 0;
   padding: 16px 24px;
-  border: 2px solid #291F1E;
+  border: 3px solid #291F1E;
   border-radius: 25%;
   background-color: #C4D6B0;
 }
@@ -118,6 +118,15 @@ body {
   margin-top: 0;
   font-weight: 800;
   color: #291F1E;
+}
+
+.replay {
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.replay:hover {
+  cursor: pointer;
 }
 
 /*--------------------*\
