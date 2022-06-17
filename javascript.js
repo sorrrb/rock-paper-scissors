@@ -54,6 +54,7 @@ let game = () => {
       mainText.textContent = 'YOU WIN!';
       moveBtns.forEach((button) => {
         button.removeEventListener('click', linkMove);
+        button.classList.remove('active');
       });
       subText.textContent = 'Play again?';
       subText.classList.add('replay');
@@ -65,6 +66,7 @@ let game = () => {
       mainText.textContent = 'YOU LOSE!';
       moveBtns.forEach((button) => {
         button.removeEventListener('click', linkMove);
+        button.classList.remove('active');
       });
       subText.textContent = 'Play again?';
       subText.classList.add('replay');
