@@ -2,6 +2,7 @@
 A webpage implementation of the game Rock, Paper, Scissors using JavaScript ES6<br>
 
 ## Demo Preview
+![Demo preview](./resources/demo.jpeg)
 [Link](https://sorrrb.github.io/rock-paper-scissors/)
 
 ### Languages utilized:
