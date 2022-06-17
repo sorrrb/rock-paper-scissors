@@ -53,7 +53,7 @@ body {
   background-color: #C4D6B0;
 }
 
-.media:hover {
+.active:hover {
   cursor: pointer;
 }
 
