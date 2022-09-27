@@ -1,4 +1,4 @@
-# js-rock-paper-scissors
+# rock-paper-scissors
 A webpage implementation of the game Rock, Paper, Scissors using JavaScript<br>
 
 [Live Demo](https://sorrrb.github.io/js-rock-paper-scissors/)
