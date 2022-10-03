@@ -1,21 +1,24 @@
 # rock-paper-scissors
 A webpage implementation of the game Rock, Paper, Scissors using JavaScript<br>
 
-[Live Demo](https://sorrrb.github.io/js-rock-paper-scissors/)
+[Live Demo](https://sorrrb.github.io/rock-paper-scissors/)
 
 ## Demo Preview
-![Demo preview](./resources/demo.png)
+![Demo preview](./resources/demo1.png)
+![Demo preview](./resources/demo2.png)
 
-### Languages utilized:
+### Languages
 - HTML
 - CSS
-- JavaScript (vanilla - ES6)
+- JavaScript
 
-### Defined skills:
-- CSS Flexbox
-- Usage of .SVG filetype
-- Arrow functions & callbacks
-- Data types & typecasting
+### Concepts
+Flexbox
+CSS Grid
+Pseudo-classes
+DOM manipulation methods
+Module pattern
+Closure
 
-## Attribution(s):
+## Attribution(s)
 [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) (https://icon54.com) - GitHub SVG icon usage in footer
