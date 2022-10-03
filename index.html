@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>RPS</title>
-    <script src="javascript.js" defer></script>
-  </head>
-  <body>
-    <div class="page--header">
-      <h1 class="game--title">Rock Paper Scissors</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+  <div class="info-wrapper">
+    <h1>Rock Paper Scissors</h1>
+    <p class="info-message">First to 3 wins!</p>
+    <div class="help-wrapper">
+      <p>Select a move to begin the game....</p>
     </div>
-    <div class="page--content">
-      <div class="info--wrapper">
-        <p class="info--text">Play against the computer in a game of Rock Paper Scissors!</p>
-        <p class="info--subtext">First to five rounds wins the match!</p>
-      </div>
-      <div class="move--wrapper">
-        <img class="media active" src="./resources/rock.svg" alt="Rock">
-        <img class="media active" src="./resources/paper.svg" alt="Paper">
-        <img class="media active" src="./resources/scissors.svg" alt="Scissors">
-      </div>
-      <div class="logic--wrapper">
-        <div class="logic--column">
-          <p class="player--choice"><span class="darken">Your Move:</span></p>
-          <p class="player--choice">&nbsp;</p>
-        </div>
-        <div class="logic--column">
-          <p class="computer--choice"><span class="darken">Computer Move:</span></p>
-          <p class="computer--choice">&nbsp;</p>
-        </div>
-      </div>
-      <div class="score--wrapper">
-        <p class="match--score"><span class="emphasize">Score:</span></p>
-        <p class="match--score">0 - 0</p>
-      </div>
-    </div>
-    <div class="page--footer">
-      <p class="footer--text">Created by:</p>
-      <p class="footer--text">sorrrb</p>
-      <a href="https://github.com/sorrrb"><img class="footer--icon" src="./resources/github.png" alt="GitHub icon"></a>
-    </div>
-  </body>
+  </div>
+
+  <div class="button-wrapper">
+    <button data-id="Rock">
+      <img src="./resources/rock.png" alt="Rock button">
+    </button>
+
+    <button data-id="Paper">
+      <img src="./resources/paper.png" alt="Paper button">
+    </button>
+  
+    <button data-id="Scissors">
+      <img src="./resources/scissors.png" alt="Scissors button">
+    </button>
+  </div>
+
+  <div class="player">
+    <p class="player-score">0</p>
+    <p class="player-head"><span>You:</span></p>
+  </div>
+
+  <div class="computer">
+    <p class="computer-score">0</p>
+    <p class="computer-head"><span>Computer:</span></p>
+  </div>
+
+  <div class="footer">
+    Created by:
+    <a href="https://github.com/sorrrb">Sorrrb
+      <img src="./resources/github.png" alt="">
+    </a>
+  </div>
+
+</body>
 </html>
