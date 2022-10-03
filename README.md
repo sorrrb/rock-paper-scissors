@@ -13,11 +13,11 @@ A webpage implementation of the game Rock, Paper, Scissors using JavaScript<br>
 - JavaScript
 
 ### Concepts
-Flexbox
-CSS Grid
-Pseudo-classes
-DOM manipulation methods
-Module pattern
+Flexbox<br>
+CSS Grid<br>
+Pseudo-classes<br>
+DOM manipulation methods<br>
+Module pattern<br>
 Closure
 
 ## Attribution(s)
