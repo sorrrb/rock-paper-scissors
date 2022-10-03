@@ -62,13 +62,29 @@ button:hover {
 
 .info-message {
   color: var(--main-text);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .help-wrapper {
   color: #141E24;
+  font-size: 1.5rem;
   margin: 16px 0;
+}
+
+.help-wrapper > p {
+  margin-top: 48px;
+}
+
+.help-wrapper > button {
+  background-color: var(--main-bg);
+  border: 2px solid var(--main-purple);
+  border-radius: 12px;
+  color: var(--main-purple);
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 8px 16px;
+  margin-top: 48px;
 }
 
 .button-wrapper {
