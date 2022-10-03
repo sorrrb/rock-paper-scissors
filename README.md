@@ -13,12 +13,12 @@ A webpage implementation of the game Rock, Paper, Scissors using JavaScript<br>
 - JavaScript
 
 ### Concepts
-Flexbox<br>
-CSS Grid<br>
-Pseudo-classes<br>
-DOM manipulation methods<br>
-Module pattern<br>
-Closure
+- Flexbox
+- CSS Grid
+- Pseudo-classes
+- DOM manipulation methods
+- Module pattern
+- Closure
 
 ## Attribution(s)
 [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) (https://icon54.com) - GitHub SVG icon usage in footer
